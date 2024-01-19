@@ -1,10 +1,12 @@
-const backendAPI = "https://expensetracker-poj7.onrender.com";
+// const backendAPI = "https://expensetracker-poj7.onrender.com";
+const backendAPI = "http://localhost:3000";
+
 const signUp = document.getElementById("signUp");
 document.addEventListener("submit", addUser);
 
 const signIn = document.getElementById("signIn");
 signIn.addEventListener("click", () => {
-  window.location.href = "./signIn.html";
+  window.location.href = "./index.html";
 });
 
 async function addUser(e) {

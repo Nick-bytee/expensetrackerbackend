@@ -28,10 +28,13 @@ app.use("/purchase", purchaseRoute);
 app.use("/users", userRoute);
 app.use("/expense", expenseRoute);
 
+app.use(express.static(path.join(__dirname, "views")));
+// Handle the default route ("/") separately
 app.use("/", (req, res) => {
   const filePath = path.join(__dirname, `/${req.url}`);
   res.sendFile(filePath);
 });
+
 mongoose
   .connect(process.env.URI)
   .then(console.log("Database Connected"), app.listen(3000))
