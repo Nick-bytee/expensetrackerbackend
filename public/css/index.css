@@ -1,0 +1,169 @@
+#icon {
+    height: auto;
+    max-width: 5%;
+}
+
+#addForm {
+    display: flex;
+}
+
+.col-auto {
+    border-radius: 0px 10px 0 0;
+}
+
+#leaderboard-toggle {
+    display: none;
+}
+
+.nav-leaderboard {
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    display: contents;
+}
+
+.buy-premium {
+    display: contents;
+    font-size: small;
+    cursor: pointer;
+}
+
+.nav-link {
+    margin-bottom: 10px;
+    color: white !important;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    padding: 3px;
+}
+
+
+.rowsPerPage {
+    display: flex;
+}
+
+.active {
+    background-color: unset !important;
+    color: blue !important;
+}
+
+.vertical-menu {
+    background-color: white;
+    width: 30%;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#leaderboard {
+    flex-grow: 1;
+    flex-basis: 300px;
+    display: none;
+}
+
+#items {
+    flex-grow: 1;
+    flex-basis: 300px;
+}
+
+.vertical-menu a {
+    background-color: #eee;
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+}
+
+th{
+    color: #ffffff !important;
+}
+
+::placeholder {
+    color: white !important;
+}
+
+option {
+    color: white !important;
+}
+
+input, select{
+    background-color: black !important;
+}
+
+.rows-select{
+    background-color: #111111 !important;
+    color: #ffffff !important;
+}
+
+td{
+    color: white !important;
+}
+
+option:checked{
+    color: white !important;
+  }
+
+.card{
+    background-color: #343a40 !important;
+    color: #ffffff !important;
+}
+
+.form-select{
+    color: white !important;
+}
+
+.vertical-menu a:hover {
+    background-color: #ccc;
+}
+
+.vertical-menu a.active {
+    background-color: #04AA6D;
+    color: white;
+}
+
+p{
+    color: white;
+}
+
+.heading {
+    color: white;
+    font-family: bd-supper, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    position: relative;
+    top: 5px;
+}
+
+@media screen and (max-width: 600px) {
+    #icon {
+        max-width: 15%;
+    }
+}
+
+.navbar-nav {
+    margin-left: auto;
+}
+
+#body {
+    background-color: #1e2023;
+    color: #ffffff;
+}
+
+.form-wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.container-fluid{
+    background-color: black;
+    color:#ffffff;
+}
+
+.form-control{
+    color: white !important;
+}

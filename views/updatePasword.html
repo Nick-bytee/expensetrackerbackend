@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <title>Forgot Passowrd</title>
+</head>
+<body style="height: fit-content;">
+  <div class="containers" id="container" style="display: grid; justify-content: center;">
+    <h3 class="heading">Reset Your Passowrd</h3>
+      <form method="post" id = 'email-form'>
+        <div class="mb-3">
+          <label class="form-label">Enter Your New Password</label>
+          <input type="password" class="form-control" id="password" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Confirm Your Password</label>
+            <input type="password" class="form-control" id="password2" aria-describedby="emailHelp" onkeyup="checkPasswordMatch()">
+          </div>
+          <p id="message"></p>
+          <button type="submit" class="btn btn-primary" id="submit" disabled>Submit</button>
+          <button class="btn btn-primary" id="forgot-psk" style="position: absolute; margin-left: 10px; display: none;">Forgot Password?</button>
+      </form>
+    <img id="image" src="./images/forgot_password.png" alt="">
+  </div>
+  <script>
+  const password = document.getElementById('password')
+  const password2 = document.getElementById('password2')
+  const message = document.getElementById('message')
+  const button = document.getElementById('submit')
+
+  document.addEventListener('submit',resetPassword)
+
+  function checkPasswordMatch(){
+        console.log(password.value, password2.value)
+        if(password.value !== password2.value){
+            console.log('working')
+            password.style.borderColor = "red"
+            password2.style.borderColor = "red"
+            message.innerHTML = 'Passwords Does Not Match'
+            message.style.color = 'red'
+            button.setAttribute("disabled", "")
+        }else {
+            password.style.borderColor = "black"
+            password2.style.borderColor = "black"
+            message.innerHTML = ""
+            button.removeAttribute("disabled")
+        }
+  }
+
+  async function resetPassword(e){
+    e.preventDefault()
+    const myObj = {
+      password : password.value,
+    }
+    try {
+        const data = await axios.post('http://localhost:3000/password/updatePassword', myObj)
+        console.log(data) 
+    }catch(err) {
+        console.log(err)
+    }
+  }
+
+
+</script>
+</body>
+</html>
