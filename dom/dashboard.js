@@ -1,8 +1,8 @@
 let form = document.getElementById("addForm");
 var table = document.getElementById("table");
 document.addEventListener("submit", additem);
-// const backendAPI = "https://expensetracker-poj7.onrender.com";
-const backendAPI = "http://localhost:3000";
+const backendAPI = "https://expensetracker-poj7.onrender.com";
+// const backendAPI = "http://localhost:3000";
 
 var editID;
 var token = localStorage.getItem("token");
